@@ -66,7 +66,7 @@ const AdminHostelAdd = () => {
       }
     }
 
-    setForm({ ...values, notValid });
+    setForm({ ...form, notValid });
     return valid;
   };
 

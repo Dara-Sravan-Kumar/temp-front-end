@@ -16,6 +16,10 @@ const hostelStatuses = [
 const AdminHostelForm = ({ form, setForm, edit }) => {
   const [wardens, setWardens] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [snackbar, setSnackbar] = useState({
+    variant: 'success',
+    message: '',
+  });
 
   useEffect(() => {
     fetchData();
@@ -161,6 +165,13 @@ const AdminHostelForm = ({ form, setForm, edit }) => {
                 />
               </StyledFieldWrapper>
             </>
+          )}
+          {snackbar && snackbar.message && (
+            <Snackbar
+              message={snackbar.message}
+              variant={snackbar.variant}
+              onClose={() => setSnackbar(null)}
+            />
           )}
         </>
       )}

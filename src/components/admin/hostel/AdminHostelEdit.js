@@ -93,7 +93,7 @@ const AdminHostelEdit = () => {
       }
     }
 
-    setForm({ ...values, notValid });
+    setForm({ ...form, notValid });
     return valid;
   };
 
