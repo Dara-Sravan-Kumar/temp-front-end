@@ -1,9 +1,11 @@
-import { DataTable } from '@blotoutio/ui-kit';
+import { Button, DataTable } from '@blotoutio/ui-kit';
+import { Edit, Trash } from '@blotoutio/ui-kit/icons';
 import { useEffect, useState } from 'react';
 import { useLocalState } from '../../../util/useLocalStorage';
 import AdminDashboard from '../dashboard/AdminDashboard';
 import { Welcome } from '../dashboard/style';
-import { Wrapper } from './style';
+import { TableIconsWrapper, TableIconWrapper, Wrapper, Release } from './style';
+import Block from '../icons/Block.svg';
 
 const AdminHostel = () => {
   const [hostels, setHostels] = useState();
@@ -47,7 +49,46 @@ const AdminHostel = () => {
         hostel.hostel.hostelRooms || '-',
         hostel.wardenName || '-',
         hostel.wardenEmail || '-',
-        'Dummy',
+        <TableIconsWrapper>
+          <TableIconWrapper
+            onClick={() => {
+              console.log('edit');
+            }}
+            isDisabled={loading}
+            title={'Edit hostel'}
+          >
+            <Edit />
+          </TableIconWrapper>
+          <TableIconWrapper
+            className={'trash'}
+            onClick={() => {
+              console.log('delete');
+            }}
+            isDisabled={loading}
+            title={'Delete hostel'}
+          >
+            <Trash />
+          </TableIconWrapper>
+          <TableIconWrapper
+            className={'trash'}
+            onClick={() => {
+              console.log('block');
+            }}
+            isDisabled={loading}
+            title={'Block hostel'}
+          >
+            <img src={Block} />
+          </TableIconWrapper>
+          <TableIconWrapper
+            onClick={() => {
+              console.log('Release');
+            }}
+            isDisabled={loading}
+            title={'Release hostel'}
+          >
+            <Release>R</Release>
+          </TableIconWrapper>
+        </TableIconsWrapper>,
       ];
     });
   };
