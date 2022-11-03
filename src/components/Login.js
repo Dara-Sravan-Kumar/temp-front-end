@@ -46,7 +46,7 @@ const Login = () => {
             window.location.href = "/Student/Studenthome";
           }
           else if(body["authorities"][0]["authority"] === "ROLE_ADMIN"){
-            window.location.href = "/adminDashboard";
+            window.location.href = "/admin/dashboard";
           }
         else alert("You don't have the authority to login");
           

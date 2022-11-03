@@ -36,6 +36,8 @@ import AddRoomType from './components/warden/hostel/roomTypes/AddRoomType';
 import EditRoomType from './components/warden/hostel/roomTypes/EditRoomType';
 import ViewStudentRecords from './components/warden/students/records/ViewStudentRecords';
 import AdminHostel from './components/admin/hostel/AdminHostel';
+import AdminHostelAdd from './components/admin/hostel/AdminHostelAdd';
+import AdminHostelEdit from './components/admin/hostel/AdminHostelEdit';
 
 function App() {
   const [users, setUsers] = useState(null);
@@ -225,21 +227,36 @@ function App() {
             }
           />
 
-          {/* TODO: Remove private route comments */}
           <Route
             path='/admin/dashboard'
             element={
-              // <PrivateRoute>
-              <AdminDashboard />
-              // </PrivateRoute>
+              <PrivateRoute>
+                <AdminDashboard />
+              </PrivateRoute>
             }
           />
           <Route
             path='/admin/hostel'
             element={
-              // <PrivateRoute>
-              <AdminHostel />
-              // </PrivateRoute>
+              <PrivateRoute>
+                <AdminHostel />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/admin/hostel/add'
+            element={
+              <PrivateRoute>
+                <AdminHostelAdd />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/admin/hostel/edit/:hostelId'
+            element={
+              <PrivateRoute>
+                <AdminHostelEdit />
+              </PrivateRoute>
             }
           />
         </Routes>

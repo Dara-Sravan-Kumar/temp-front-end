@@ -1,14 +1,28 @@
 import styled from 'styled-components';
 import { neutrals20, neutrals70 } from '@blotoutio/ui-kit/colors';
+import { FieldWrapper } from '@blotoutio/ui-kit';
 
 export const Wrapper = styled.div`
   min-height: calc(100vh - 192.77px);
   padding: 64px;
 `;
 
+export const StyledFieldWrapper = styled(FieldWrapper)`
+  width: 100%;
+
+  label {
+    width: 100%;
+  }
+`;
+
 export const Release = styled.span`
   color: green;
   font-weight: 800;
+`;
+
+export const AddHostel = styled.div`
+  width: 142px;
+  margin: 5px;
 `;
 
 export const TableIconsWrapper = styled.div`
