@@ -8,7 +8,7 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" style={{ background: "#37387a" }}>
       <Container fluid="xxl">
-        <Navbar.Brand href="#home"><p class="text-white">Hostel Availability Project</p></Navbar.Brand>
+        <Navbar.Brand href="/"><p class="text-white">Hostel Availability Project</p></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
